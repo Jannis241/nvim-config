@@ -1,0 +1,7 @@
+- cargo creates auto correction fixxen
+
+- telscope current buffer fuzzy find schneller machen
+
+- wenn man mit der maus nach ganz oben scrollt dass es dann scrollt
+
+- Tmux einrichten

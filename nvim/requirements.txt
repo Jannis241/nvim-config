@@ -1,0 +1,88 @@
+- wsl2 
+- c compiler
+- rust analyzer (mit rustup installieren)
+- muss in .config bei linux sein oder irgendwo in app data bei windows
+- cargo
+- "so" und  packer sync machen damit alles installiert wird
+- ripgreq -> für fuzzy find
+- sharkdp/fd -> für telescope
+- git
+- nerd font für die icons bei nerd tree
+
+
+
+- x11 (gui and copy paste):
+    - xclip downloaden mit apt
+    - NICHTS MIT WAYLAND DOWNLOADEN DIE SCHEIßE IST ASSSSSSSSSSSSSSSS
+    - falls es auf dem pc ist wl-clipboard deinstallieren: sudo apt remove wl-clipboard
+    - zwei möglichkeiten:
+        A:
+            - jetzt bei mir funktioniert das irgendwie einfach so, ich brauche
+            den server nicht mehr
+
+        B:
+            - VcXsrv (wenn man wsl2 benutzt) -> Clipboard setting an machen
+            - multiple windows, start no client , disable access control 
+            - VcXsrv in den auto start packen damit man das nicht immer starten muss
+
+            in bashrc:
+            -export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+
+
+        Um zu testen ob es funktioniert einfach xeyes eingeben. 
+
+
+- bashrc:
+    -export PATH="$PATH:/opt/nvim/"
+- lua rocks
+
+
+- nvim installation (für wsl 2):
+    - curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+    - chmod u+x nvim.appimage
+    - mkdir -p /opt/nvim
+    - mv nvim.appimage /opt/nvim/nvim
+    - export PATH="$PATH:/opt/nvim/" -> in bashrc
+
+    ----->> alles auf der nvim webseite und auch auf dem installation tutorial für wsl2
+
+------
+
+Optional aber sinnvoll:
+
+Dependencies der packages (manche sind schon default installed):
+
+(die meisten sind nicht 100% nötig aber geben weitere features)
+
+Alles was noch fehlt sieht man unter :checkhealth
+
+- curl
+-xdg-open (sudo apt-get install xdg-util)
+- jsregexp
+- fd (apt install fd-find)
+- unzip
+- wget
+- gzip
+- tar
+- bash
+- sh
+- node
+- cargo
+- python
+- python venv
+- npm
+- neovim npm package: npm install -g neovim
+
+
+
+nicht direkt für vim aber für linux:
+    - wenn du python bzw pip allein stehend haben möchtest brauchst du ein env:
+
+    python3 -m venv path/to/venv -> path zum venv kann beliebig sein 
+    source path/to/venv/bin/activate
+
+    oder: 
+        - man kann auch pipx benutzten oder sudo apt install python3-xyz für eine system weite installation
+
+
+
